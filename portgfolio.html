@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishika Dutta | SDE & Robotics</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+    :root {
+        --bg-soft: #fff9fb;
+        --primary-accent: #ff85a1; 
+        --secondary-accent: #fbc4ab;
+        --text-main: #2d232e;
+        --text-muted: #6b5e6d;
+        --glass: rgba(255, 255, 255, 0.9);
+        --border-soft: rgba(255, 133, 161, 0.2);
+        --shadow-sm: 0 4px 12px rgba(255, 133, 161, 0.08);
+        --shadow-md: 0 12px 24px rgba(255, 133, 161, 0.12);
+        --glow: rgba(255, 133, 161, 0.3);
+    }
+
+    * {
+        margin: 0; padding: 0; box-sizing: border-box;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--bg-soft);
+        color: var(--text-main);
+        line-height: 1.7;
+        background-image: radial-gradient(var(--border-soft) 1px, transparent 1px);
+        background-size: 30px 30px;
+    }
+
+    /* ── Navigation ── */
+    nav {
+        position: fixed; top: 0; width: 100%;
+        padding: 1.2rem 10%;
+        display: flex; justify-content: space-between; align-items: center;
+        background: var(--glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 1000;
+        border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav-logo {
+        font-size: 1.5rem; 
+        font-weight: 800; /* Bold Inter for branding */
+        letter-spacing: -1px;
+        color: var(--text-main);
+        text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+        text-decoration: none; color: var(--text-main);
+        font-size: 0.85rem; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 1px;
+        transition: 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--primary-accent); }
+
+    /* ── Hero ── */
+    .hero {
+        min-height: 100vh; display: flex; align-items: center;
+        padding: 140px 10% 80px; gap: 60px;
+    }
+
+    .hero-text { flex: 1.2; }
+    .hero-text h1 {
+        font-weight: 900; /* Extra bold for the hero font */
+        font-size: clamp(2.8rem, 6vw, 4.5rem);
+        line-height: 1.05; 
+        margin: 1.5rem 0;
+        letter-spacing: -2px; /* Tighter spacing for a modern look */
+    }
+
+    .status-badge {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: white; padding: 8px 16px; border-radius: 100px;
+        border: 1px solid var(--border-soft); font-size: 0.75rem;
+        font-weight: 700; color: var(--primary-accent);
+        text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* ── Grid & Cards ── */
+    .section-padding { padding: 100px 10%; }
+    .section-title {
+        text-align: center; margin-bottom: 4rem;
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    .grid-container {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+
+    .glass-card {
+        background: white; padding: 2.5rem; border-radius: 28px;
+        border: 1px solid var(--border-soft); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .glass-card:hover {
+        transform: translateY(-12px); box-shadow: var(--shadow-md);
+        border-color: var(--primary-accent);
+    }
+
+    /* ── Connect & CV ── */
+    .connect-section {
+        background: #fff; border-radius: 40px; padding: 4rem;
+        display: flex; flex-wrap: wrap; gap: 2rem;
+        justify-content: space-between; align-items: center;
+    }
+
+    .social-link-card {
+        flex: 1; min-width: 200px;
+        display: flex; flex-direction: column; align-items: center;
+        padding: 2rem; border-radius: 20px; text-decoration: none;
+        color: var(--text-main); border: 1px solid var(--border-soft);
+        transition: 0.3s;
+    }
+
+    .social-link-card:hover { background: var(--bg-soft); border-color: var(--primary-accent); }
+
+    .btn-cv {
+        background: var(--primary-accent); color: white;
+        padding: 1.2rem 2.5rem; border-radius: 12px;
+        text-decoration: none; font-weight: 700;
+        display: inline-flex; align-items: center; gap: 10px;
+        box-shadow: 0 10px 20px var(--glow); transition: 0.3s;
+    }
+    .btn-cv:hover { transform: scale(1.05); }
+
+    /* ── Skill Chips ── */
+    .skills-wrapper {
+        display: flex; flex-wrap: wrap; justify-content: center;
+        gap: 12px; max-width: 1000px; margin: 0 auto;
+    }
+    .skill-chip {
+        background: white; padding: 10px 22px; border-radius: 100px;
+        font-size: 0.9rem; font-weight: 600; border: 1px solid var(--border-soft);
+        transition: 0.3s; cursor: default;
+    }
+    .skill-chip:hover { background: var(--primary-accent); color: white; transform: translateY(-3px); }
+
+    @media (max-width: 992px) {
+        .hero { flex-direction: column; text-align: center; }
+        .nav-links { display: none; }
+        .connect-section { flex-direction: column; padding: 2rem; }
+    }
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">Ishika Dutta</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#skills">Stack</a></li>
+            <li><a href="#connect">Connect</a></li>
+        </ul>
+        <a href="resume.docx" download class="btn-cv" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">
+            <i data-lucide="download" style="width: 16px;"></i> CV
+        </a>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <span class="status-badge">
+                <span style="height: 8px; width: 8px; background: #50e3c2; border-radius: 50%; display: inline-block;"></span>
+                Available for SDE Internships 2026
+            </span>
+            <h1>Crafting Systems with <br>Code & Creativity.</h1>
+            <p>
+                <b>MCA Candidate at Amity University Haryana.</b> I specialize in Java ecosystems, React architectures, and AI-driven autonomous robotics. From participating in Smart India Hackathon to building e-commerce engines—I turn complex logic into elegant experiences.
+            </p>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+                <a href="#projects" class="btn-cv">View Portfolio</a>
+                <div style="display: flex; gap: 15px;">
+                    <a href="https://github.com/yourusername" target="_blank" style="color: var(--text-main)"><i data-lucide="github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" style="color: var(--text-main)"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-area">
+            <div class="image-wrapper" style="position: relative; width: 320px; height: 400px;">
+                <img src="profile1.jpg" alt="Ishika Dutta" style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px; border: 10px solid white; box-shadow: var(--shadow-md);">
+                <div style="position: absolute; bottom: -20px; right: -20px; background: white; padding: 15px; border-radius: 15px; box-shadow: var(--shadow-sm);">
+                    <i data-lucide="code-2" style="color: var(--primary-accent)"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="projects">
+        <h2 class="section-title">Case Studies</h2>
+        <div class="grid-container">
+            <div class="glass-card">
+                <div style="font-weight: 800; color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 0.7rem; text-transform: uppercase;">Robotics & IoT</div>
+                <h3 style="font-family: 'Playfair Display'; margin-bottom: 1rem;">Autonomous Robot</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Developing a self-steering car which navigates path automatically. A core focus of my Master's research.</p>
+            </div>
+            <div class="glass-card">
+                <div style="font-weight: 800; color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 0.7rem; text-transform: uppercase;">Full Stack MERN</div>
+                <h3 style="font-family: 'Playfair Display'; margin-bottom: 1rem;">Vogue Vista</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Fashion-forward E-commerce engine featuring a responsive Tailwind UI, JWT authentication, and optimized SQL queries.</p>
+            </div>
+            <div class="glass-card">
+                <div style="font-weight: 800; color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 0.7rem; text-transform: uppercase;">Utility SaaS</div>
+                <h3 style="font-family: 'Playfair Display'; margin-bottom: 1rem;">Travel Buddy</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Integrated travel solution providing real-time hotel discovery and transportation logistics for modern explorers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="skills" style="background: white;">
+        <h2 class="section-title">Technical Ecosystem</h2>
+        <div class="skills-wrapper">
+            <div class="skill-chip">Java</div>
+            <div class="skill-chip">React.js</div>
+            <div class="skill-chip">Python / AI-ML</div>
+            <div class="skill-chip">SQL</div>
+            <div class="skill-chip">Tailwind CSS</div>
+            <div class="skill-chip">Spring Boot</div>
+            <div class="skill-chip">Node.js</div>
+            <div class="skill-chip">C++ (STL)</div>
+            <div class="skill-chip">Git / GitHub</div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="connect">
+        <div class="connect-section">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin-bottom: 1rem;">Ready to build <br>something great?</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open!</p>
+                <a href="resume.docx" download class="btn-cv">
+                    <i data-lucide="file-text"></i> Download Full Resume
+                </a>
+            </div>
+            <div style="flex: 1; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/ishika-dutta-7a6233380" class="social-link-card">
+                    <i data-lucide="linkedin" style="width: 32px; height: 32px;"></i>
+                    <span style="font-weight: 700;">LinkedIn</span>
+                    <span style="font-size: 0.7rem; color: var(--text-muted);">Professional Network</span>
+                </a>
+                <a href="#" class="social-link-card">
+                    <i data-lucide="github" style="width: 32px; height: 32px;"></i>
+                    <span style="font-weight: 700;">GitHub</span>
+                    <span style="font-size: 0.7rem; color: var(--text-muted);">Source Code</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 3rem 10%; text-align: center; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border-soft);">
+        <p>&copy; 2026 Ishika Dutta • Built with React-logic vibes & Vanilla CSS</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
