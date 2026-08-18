@@ -6,7 +6,7 @@
     <title>Ishika Dutta | SDE & Robotics</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="style.css">
     <style>
     :root {
         --bg-soft: #fff9fb;
@@ -160,17 +160,19 @@
 <body>
 
     <nav>
-        <div class="nav-logo">Ishika Dutta</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Work</a></li>
-            <li><a href="#skills">Stack</a></li>
-            <li><a href="#connect">Connect</a></li>
-        </ul>
-        <a href="resume.docx" download class="btn-cv" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">
-            <i data-lucide="download" style="width: 16px;"></i> CV
-        </a>
-    </nav>
+    <a href="#home" class="nav-logo">Ishika Dutta</a>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#skills">Stack</a></li>
+        <li><a href="#connect">Connect</a></li>
+    </ul>
+
+    <a href="#resume" class="nav-resume">
+        Resume ↗
+    </a>
+</nav>
 
     <section class="hero" id="home">
         <div class="hero-text">
@@ -178,15 +180,24 @@
                 <span style="height: 8px; width: 8px; background: #50e3c2; border-radius: 50%; display: inline-block;"></span>
                 Available for SDE Internships 2026
             </span>
-            <h1>Crafting Systems with <br>Code & Creativity.</h1>
+            <h1>Crafting Systems<br>with Code & Creativity.</h1>
             <p>
                 <b>MCA Candidate at Amity University Haryana.</b> I specialize in Java ecosystems, React architectures, and AI-driven autonomous robotics. From participating in Smart India Hackathon to building e-commerce engines—I turn complex logic into elegant experiences.
             </p>
             <div style="display: flex; gap: 1.5rem; align-items: center;">
                 <a href="#projects" class="btn-cv">View Portfolio</a>
                 <div style="display: flex; gap: 15px;">
-                    <a href="https://github.com/yourusername" target="_blank" style="color: var(--text-main)"><i data-lucide="github"></i></a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" style="color: var(--text-main)"><i data-lucide="linkedin"></i></a>
+                    <a href="https://github.com/IshikaDutta2004/"
+   target="_blank"
+   style="color: var(--text-main)">
+    <i data-lucide="github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/ishika-dutta-7a6233380"
+   target="_blank"
+   style="color: var(--text-main)">
+    <i data-lucide="linkedin"></i>
+</a>
                 </div>
             </div>
         </div>
@@ -201,25 +212,93 @@
     </section>
 
     <section class="section-padding" id="projects">
-        <h2 class="section-title">Case Studies</h2>
-        <div class="grid-container">
-            <div class="glass-card">
-                <div style="font-weight: 800; color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 0.7rem; text-transform: uppercase;">Robotics & IoT</div>
-                <h3 style="font-family: 'Playfair Display'; margin-bottom: 1rem;">Autonomous Robot</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Developing a self-steering car which navigates path automatically. A core focus of my Master's research.</p>
+
+    <h2 class="section-title">Case Studies</h2>
+
+    <div class="grid-container">
+
+        <!-- Project 1 -->
+        <div class="glass-card">
+
+            <a href="Autonomous Vehicle Report.pdf"
+               target="_blank"
+               class="project-btn">
+                View Project ↗
+            </a>
+
+            <div class="project-category">
+                Robotics & IoT
             </div>
-            <div class="glass-card">
-                <div style="font-weight: 800; color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 0.7rem; text-transform: uppercase;">Full Stack MERN</div>
-                <h3 style="font-family: 'Playfair Display'; margin-bottom: 1rem;">Vogue Vista</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Fashion-forward E-commerce engine featuring a responsive Tailwind UI, JWT authentication, and optimized SQL queries.</p>
-            </div>
-            <div class="glass-card">
-                <div style="font-weight: 800; color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 0.7rem; text-transform: uppercase;">Utility SaaS</div>
-                <h3 style="font-family: 'Playfair Display'; margin-bottom: 1rem;">Travel Buddy</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Integrated travel solution providing real-time hotel discovery and transportation logistics for modern explorers.</p>
-            </div>
+
+            <h3>
+                Autonomous GPS-Guided Smart Car
+            </h3>
+
+            <p>
+                Developing a self-steering car which navigates
+                path automatically. A core focus of my Master's research.
+            </p>
+
         </div>
-    </section>
+
+
+        <!-- Project 2 -->
+        <div class="glass-card">
+
+            <span class="project-btn coming-soon">
+                Coming Soon
+            </span>
+
+            <div class="project-category">
+                Full Stack MERN
+            </div>
+
+            <h3>
+                Hirelens
+            </h3>
+
+            <p>
+                Built an AI-powered application that analyzes resumes,
+                calculates ATS compatibility, and provides personalized
+                suggestions for improvement.
+            </p>
+
+            <p class="project-stack">
+                React.js · Node.js · Python · Flask · MongoDB · REST APIs
+            </p>
+
+        </div>
+
+
+        <!-- Project 3 -->
+        <div class="glass-card">
+
+            <a href="TRAVEL BUDDY/index.html"
+               class="project-btn">
+                View Project ↗
+            </a>
+
+            <div class="project-category">
+                Utility SaaS
+            </div>
+
+            <h3>
+                Travel Buddy
+            </h3>
+
+            <p>
+                Integrated travel solution providing real-time hotel
+                discovery and transportation logistics for modern explorers.
+            </p>
+        <p class="project-stack">
+                React.js · JavaScript · HTML · CSS 
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
     <section class="section-padding" id="skills" style="background: white;">
         <h2 class="section-title">Technical Ecosystem</h2>
@@ -236,6 +315,66 @@
         </div>
     </section>
 
+    <section class="section-padding" id="resume">
+
+    <div class="resume-box">
+
+        <div class="resume-content">
+
+            <span class="resume-label">MY RESUME</span>
+
+            <h3>Explore my journey.</h3>
+
+            <p>
+                View my resume to explore my skills, projects,
+                education, and experience.
+            </p>
+
+            <div class="resume-buttons">
+
+                <a href="resume.pdf"
+                   target="_blank"
+                   class="resume-btn">
+                    View Resume ↗
+                </a>
+
+                <a href="resume.pdf"
+                   download="Ishika-Dutta-Resume.pdf"
+                   class="download-btn">
+                    Download PDF ↓
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="resume-links">
+
+            <a href="https://www.linkedin.com/in/ishika-dutta-7a6233380"
+               target="_blank"
+               class="resume-link-card">
+
+                <strong>LinkedIn</strong>
+                <span>Professional Network</span>
+
+            </a>
+
+            <a href="https://github.com/IshikaDutta2004/"
+               target="_blank"
+               class="resume-link-card">
+
+                <strong>GitHub</strong>
+                <span>Source Code</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
     <section class="section-padding" id="connect">
         <div class="connect-section">
             <div style="flex: 1; min-width: 300px;">
@@ -251,7 +390,7 @@
                     <span style="font-weight: 700;">LinkedIn</span>
                     <span style="font-size: 0.7rem; color: var(--text-muted);">Professional Network</span>
                 </a>
-                <a href="#" class="social-link-card">
+                <a href="https://github.com/IshikaDutta2004/" class="social-link-card">
                     <i data-lucide="github" style="width: 32px; height: 32px;"></i>
                     <span style="font-weight: 700;">GitHub</span>
                     <span style="font-size: 0.7rem; color: var(--text-muted);">Source Code</span>
@@ -268,4 +407,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>
